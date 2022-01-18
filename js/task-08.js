@@ -2,14 +2,15 @@ const formRef = document.querySelector('.login-form');
 
 const onFormSubmit = (event) => {
     event.preventDefault();
-    const elems = [...event.currentTarget.elements].filter(element => element.nodeName === 'INPUT');
-    if (elems.some(element => (element.value === ''))) return alert('Form is not filled');
+
+    const email = event.currentTarget.elements.email.value;
+    const password = event.currentTarget.elements.password.value;
     
-    const res = elems.reduce((acc, elem) => { acc[elem.name] = elem.value; return acc; }, {});
-    
+    if ((!email)||(!password)) return alert('Form is not filled') 
+
     event.currentTarget.reset();
-    console.log(res);
-    return res;
+    console.log({email, password});
+    return {email, password};
 }
 
 formRef.addEventListener('submit', onFormSubmit);
@@ -28,3 +29,8 @@ formRef.addEventListener('submit', onFormSubmit);
 //         return res;
 //     }
 // }
+
+    // const elems = [...event.currentTarget.elements].filter(element => element.nodeName === 'INPUT');
+    // if (elems.some(element => (element.value === ''))) return alert('Form is not filled');
+    
+    // const res = elems.reduce((acc, elem) => { acc[elem.name] = elem.value; return acc; }, {});

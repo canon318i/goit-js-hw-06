@@ -3,7 +3,7 @@ const dataLength = inputRef.dataset.length;
 
 const onInputBlur = () => {
     inputRef.classList.remove('valid', 'invalid');
-    (inputRef.value.length == inputRef.dataset.length) ? inputRef.classList.add('valid') : inputRef.classList.add('invalid');
+    inputRef.classList.add( (inputRef.value.length == inputRef.dataset.length) ? 'valid' : 'invalid');
 }
 
 inputRef.addEventListener('blur', onInputBlur);

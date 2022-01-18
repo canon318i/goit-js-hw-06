@@ -13,13 +13,13 @@ const images = [
   },
 ];
 
-const createListItem = (image) => { 
-  return `<li><img src="${image.url}" alt="${image.alt}" width=90%></li>`; 
-}
-
 const listRef = document.querySelector('.gallery');
 const listItemRef = images.map(createListItem);
+
+const createListItem = (image) => {
+  return `<li><img src="${image.url}" alt="${image.alt}" width=90%></li>`;
+};
+
 listRef.insertAdjacentHTML('afterbegin', [...listItemRef].join(''));
 
-// listRef.innerHTML = [...listItemRef].join('');
 

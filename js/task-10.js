@@ -2,11 +2,11 @@ const boxesRef = document.querySelector('#boxes');
 const controlsRef = document.querySelector('#controls > input');
 const createButtonRef = document.querySelector('[data-create]');
 const destroyButtonRef = document.querySelector('[data-destroy]');
-controlsRef.value = 1;
 
 const createCollectionHandler = (event) => { 
-  const collectionSize = controlsRef.value ?? 1;
+  if (!(controlsRef.value)) return alert('Please enter a Number');
   const collection = [];
+  const collectionSize = controlsRef.value;
   var size = 30;
 
   for (let index = 0; index < collectionSize; index++) {
@@ -18,10 +18,12 @@ const createCollectionHandler = (event) => {
     collection.push(elem);
   }
   boxesRef.append(...collection);
+  controlsRef.value = '';
 }
 
 const destroyCollectionHandler = () => { 
   boxesRef.innerHTML = '';
+  controlsRef.value = '';
 }
 
 createButtonRef.addEventListener('click', createCollectionHandler);
