@@ -17,12 +17,9 @@ const createListItem = (image) => {
   return `<li><img src="${image.url}" alt="${image.alt}" width=90%></li>`; 
 }
 
-document.querySelector('.gallery').insertAdjacentHTML('afterbegin', [...images.map(createListItem)].join(''));
-
-
-// const listRef = document.querySelector('.gallery');
-// const listItemRef = images.map(createListItem);
-// listRef.insertAdjacentHTML('afterbegin', [...listItemRef].join(''));
+const listRef = document.querySelector('.gallery');
+const listItemRef = images.map(createListItem);
+listRef.insertAdjacentHTML('afterbegin', [...listItemRef].join(''));
 
 // listRef.innerHTML = [...listItemRef].join('');
 

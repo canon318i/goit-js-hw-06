@@ -5,4 +5,6 @@ const onRangeChanged = () => {
     textRef.style.fontSize = inputRef.value+'px';
 }
 
-inputRef.addEventListener('change', onRangeChanged);
+onRangeChanged();
+
+inputRef.addEventListener('input', onRangeChanged);

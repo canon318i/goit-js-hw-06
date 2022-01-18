@@ -1,19 +1,18 @@
-
-const categoryClassName = '.item';
-
-const getCategories = (item) => {
-    return document.querySelectorAll(item);
-};
+const itemRef = document.querySelectorAll('.item');
 
 const showCategorySummary = (catRef) => { 
     console.log('\n');
-    console.log('Category: ', catRef.querySelector('h2').textContent);
-    console.log('Elements: ', catRef.querySelectorAll('li').length);
+    console.log('Category: ', catRef.firstElementChild.textContent);
+    console.log('Elements: ', catRef.firstElementChild.nextElementSibling.children.length);
 }
 
-console.log('Number of categories: ', getCategories(categoryClassName).length);
+console.log('Number of categories: ', itemRef.length);
 
-getCategories(categoryClassName).forEach(showCategorySummary);
+itemRef.forEach(showCategorySummary);
 
 
-
+// const showCategorySummary = (catRef) => { 
+//     console.log('\n');
+//     console.log('Category: ', catRef.querySelector('h2').textContent);
+//     console.log('Elements: ', catRef.querySelectorAll('li').length);
+// }

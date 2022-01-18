@@ -15,9 +15,9 @@ const createListItems = (ingridient) => {
 }
 
 // вариант "в одну строку"
-document.querySelector('#ingredients').append(...ingredients.map(createListItems));
+// document.querySelector('#ingredients').append(...ingredients.map(createListItems));
 
-// полный вариант, с использованием переменных, оставлен для обсуждения на занятии
-// const listItems = ingredients.map(createListItems);
-// const listRef = document.querySelector('#ingredients');
-// listRef.append(...listItems);
+// полный вариант, с использованием переменных
+const listItems = ingredients.map(createListItems);
+const listRef = document.querySelector('#ingredients');
+listRef.append(...listItems);
