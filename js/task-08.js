@@ -32,5 +32,4 @@ formRef.addEventListener('submit', onFormSubmit);
 
     // const elems = [...event.currentTarget.elements].filter(element => element.nodeName === 'INPUT');
     // if (elems.some(element => (element.value === ''))) return alert('Form is not filled');
-    
     // const res = elems.reduce((acc, elem) => { acc[elem.name] = elem.value; return acc; }, {});
